@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="DespachoAbogados"/>
+  <table-filter match-name="expediente"/>
+  <table-filter match-name="municipio"/>
+  <table-filter match-name="juzgados"/>
+  <table-filter match-name="estadoevolutivo"/>
+  <table-filter match-name="departamento"/>
+  <table-filter match-name="detallefactura"/>
+  <table-filter match-name="tipoexpediente"/>
+  <table-filter match-name="tipopersona"/>
+  <table-filter match-name="factura"/>
+  <table-filter match-name="persona"/>
+  <table-filter match-name="usuarios"/>
+  <table-filter match-name="agenda"/>
+  <table-filter match-name="asuntojudicial"/>
+  <table-filter match-name="persona_tipopersona"/>
+  <table-filter match-name="detallesexpediente"/>
+</hibernate-reverse-engineering>
