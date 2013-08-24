@@ -1,8 +1,8 @@
 package com.Despachos.Expedientes;
-// Generated 08-20-2013 07:07:18 PM by Hibernate Tools 3.2.1.GA
+// Generated 08-24-2013 05:33:50 PM by Hibernate Tools 3.2.1.GA
 
 
-import com.Expedientes.Juzgados.Usuarios;
+import com.Despachos.Expedientes.Expediente;
 import java.util.Date;
 
 /**
@@ -11,9 +11,10 @@ import java.util.Date;
 public class Estadoevolutivo  implements java.io.Serializable {
 
 
-     private EstadoevolutivoId id;
+     private Integer idEstado;
      private Usuarios usuarios;
      private Expediente expediente;
+     private Tipoaviso tipoaviso;
      private Date fechaCreacion;
      private Date fechaCita;
      private String descripcion;
@@ -21,15 +22,14 @@ public class Estadoevolutivo  implements java.io.Serializable {
      private Date horaCita;
      private Date horaAviso;
      private String documento;
-     private String tipoAviso;
 
     public Estadoevolutivo() {
     }
 
-    public Estadoevolutivo(EstadoevolutivoId id, Usuarios usuarios, Expediente expediente, Date fechaCreacion, Date fechaCita, String descripcion, Date fechaAviso, Date horaCita, Date horaAviso, String documento, String tipoAviso) {
-       this.id = id;
+    public Estadoevolutivo(Usuarios usuarios, Expediente expediente, Tipoaviso tipoaviso, Date fechaCreacion, Date fechaCita, String descripcion, Date fechaAviso, Date horaCita, Date horaAviso, String documento) {
        this.usuarios = usuarios;
        this.expediente = expediente;
+       this.tipoaviso = tipoaviso;
        this.fechaCreacion = fechaCreacion;
        this.fechaCita = fechaCita;
        this.descripcion = descripcion;
@@ -37,15 +37,14 @@ public class Estadoevolutivo  implements java.io.Serializable {
        this.horaCita = horaCita;
        this.horaAviso = horaAviso;
        this.documento = documento;
-       this.tipoAviso = tipoAviso;
     }
    
-    public EstadoevolutivoId getId() {
-        return this.id;
+    public Integer getIdEstado() {
+        return this.idEstado;
     }
     
-    public void setId(EstadoevolutivoId id) {
-        this.id = id;
+    public void setIdEstado(Integer idEstado) {
+        this.idEstado = idEstado;
     }
     public Usuarios getUsuarios() {
         return this.usuarios;
@@ -60,6 +59,13 @@ public class Estadoevolutivo  implements java.io.Serializable {
     
     public void setExpediente(Expediente expediente) {
         this.expediente = expediente;
+    }
+    public Tipoaviso getTipoaviso() {
+        return this.tipoaviso;
+    }
+    
+    public void setTipoaviso(Tipoaviso tipoaviso) {
+        this.tipoaviso = tipoaviso;
     }
     public Date getFechaCreacion() {
         return this.fechaCreacion;
@@ -109,13 +115,6 @@ public class Estadoevolutivo  implements java.io.Serializable {
     
     public void setDocumento(String documento) {
         this.documento = documento;
-    }
-    public String getTipoAviso() {
-        return this.tipoAviso;
-    }
-    
-    public void setTipoAviso(String tipoAviso) {
-        this.tipoAviso = tipoAviso;
     }
 
 

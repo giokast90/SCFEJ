@@ -1,5 +1,5 @@
 package com.Despachos.Facturacion;
-// Generated 08-20-2013 07:07:18 PM by Hibernate Tools 3.2.1.GA
+// Generated 08-24-2013 05:33:50 PM by Hibernate Tools 3.2.1.GA
 
 
 
@@ -9,7 +9,7 @@ package com.Despachos.Facturacion;
 public class Detallefactura  implements java.io.Serializable {
 
 
-     private DetallefacturaId id;
+     private int idFactura;
      private Factura factura;
      private String descripcion;
      private float costo;
@@ -17,19 +17,19 @@ public class Detallefactura  implements java.io.Serializable {
     public Detallefactura() {
     }
 
-    public Detallefactura(DetallefacturaId id, Factura factura, String descripcion, float costo) {
-       this.id = id;
+    public Detallefactura(int idFactura, Factura factura, String descripcion, float costo) {
+       this.idFactura = idFactura;
        this.factura = factura;
        this.descripcion = descripcion;
        this.costo = costo;
     }
    
-    public DetallefacturaId getId() {
-        return this.id;
+    public int getIdFactura() {
+        return this.idFactura;
     }
     
-    public void setId(DetallefacturaId id) {
-        this.id = id;
+    public void setIdFactura(int idFactura) {
+        this.idFactura = idFactura;
     }
     public Factura getFactura() {
         return this.factura;

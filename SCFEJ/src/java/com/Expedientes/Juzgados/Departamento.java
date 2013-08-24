@@ -1,5 +1,5 @@
 package com.Expedientes.Juzgados;
-// Generated 08-20-2013 07:07:18 PM by Hibernate Tools 3.2.1.GA
+// Generated 08-24-2013 05:33:50 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -13,7 +13,7 @@ public class Departamento  implements java.io.Serializable {
 
      private Integer idDepartamento;
      private String nombreDepartamento;
-     private Set<Municipio> municipios = new HashSet<Municipio>(0);
+     private Set juzgadoses = new HashSet(0);
 
     public Departamento() {
     }
@@ -22,9 +22,9 @@ public class Departamento  implements java.io.Serializable {
     public Departamento(String nombreDepartamento) {
         this.nombreDepartamento = nombreDepartamento;
     }
-    public Departamento(String nombreDepartamento, Set<Municipio> municipios) {
+    public Departamento(String nombreDepartamento, Set juzgadoses) {
        this.nombreDepartamento = nombreDepartamento;
-       this.municipios = municipios;
+       this.juzgadoses = juzgadoses;
     }
    
     public Integer getIdDepartamento() {
@@ -41,12 +41,12 @@ public class Departamento  implements java.io.Serializable {
     public void setNombreDepartamento(String nombreDepartamento) {
         this.nombreDepartamento = nombreDepartamento;
     }
-    public Set<Municipio> getMunicipios() {
-        return this.municipios;
+    public Set getJuzgadoses() {
+        return this.juzgadoses;
     }
     
-    public void setMunicipios(Set<Municipio> municipios) {
-        this.municipios = municipios;
+    public void setJuzgadoses(Set juzgadoses) {
+        this.juzgadoses = juzgadoses;
     }
 
 

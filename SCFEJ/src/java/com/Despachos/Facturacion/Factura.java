@@ -1,9 +1,8 @@
 package com.Despachos.Facturacion;
-// Generated 08-20-2013 07:07:18 PM by Hibernate Tools 3.2.1.GA
+// Generated 08-24-2013 05:33:50 PM by Hibernate Tools 3.2.1.GA
 
 
-import com.Despachos.Expedientes.Expediente;
-import com.Despachos.Personas.Persona;
+import com.Despachos.Clientes.Personas;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,9 +13,8 @@ import java.util.Set;
 public class Factura  implements java.io.Serializable {
 
 
-     private FacturaId id;
-     private Persona persona;
-     private Expediente expediente;
+     private Integer idFactura;
+     private Personas personas;
      private Date fechaCreacion;
      private float subtotal;
      private float iva;
@@ -24,16 +22,14 @@ public class Factura  implements java.io.Serializable {
      private String medioPago;
      private String estado;
      private boolean activo;
-     private Set<Detallefactura> detallefacturas = new HashSet<Detallefactura>(0);
+     private Set detallefacturas = new HashSet(0);
 
     public Factura() {
     }
 
 	
-    public Factura(FacturaId id, Persona persona, Expediente expediente, Date fechaCreacion, float subtotal, float iva, float total, String medioPago, String estado, boolean activo) {
-        this.id = id;
-        this.persona = persona;
-        this.expediente = expediente;
+    public Factura(Personas personas, Date fechaCreacion, float subtotal, float iva, float total, String medioPago, String estado, boolean activo) {
+        this.personas = personas;
         this.fechaCreacion = fechaCreacion;
         this.subtotal = subtotal;
         this.iva = iva;
@@ -42,10 +38,8 @@ public class Factura  implements java.io.Serializable {
         this.estado = estado;
         this.activo = activo;
     }
-    public Factura(FacturaId id, Persona persona, Expediente expediente, Date fechaCreacion, float subtotal, float iva, float total, String medioPago, String estado, boolean activo, Set<Detallefactura> detallefacturas) {
-       this.id = id;
-       this.persona = persona;
-       this.expediente = expediente;
+    public Factura(Personas personas, Date fechaCreacion, float subtotal, float iva, float total, String medioPago, String estado, boolean activo, Set detallefacturas) {
+       this.personas = personas;
        this.fechaCreacion = fechaCreacion;
        this.subtotal = subtotal;
        this.iva = iva;
@@ -56,26 +50,19 @@ public class Factura  implements java.io.Serializable {
        this.detallefacturas = detallefacturas;
     }
    
-    public FacturaId getId() {
-        return this.id;
+    public Integer getIdFactura() {
+        return this.idFactura;
     }
     
-    public void setId(FacturaId id) {
-        this.id = id;
+    public void setIdFactura(Integer idFactura) {
+        this.idFactura = idFactura;
     }
-    public Persona getPersona() {
-        return this.persona;
-    }
-    
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
-    public Expediente getExpediente() {
-        return this.expediente;
+    public Personas getPersonas() {
+        return this.personas;
     }
     
-    public void setExpediente(Expediente expediente) {
-        this.expediente = expediente;
+    public void setPersonas(Personas personas) {
+        this.personas = personas;
     }
     public Date getFechaCreacion() {
         return this.fechaCreacion;
@@ -126,11 +113,11 @@ public class Factura  implements java.io.Serializable {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-    public Set<Detallefactura> getDetallefacturas() {
+    public Set getDetallefacturas() {
         return this.detallefacturas;
     }
     
-    public void setDetallefacturas(Set<Detallefactura> detallefacturas) {
+    public void setDetallefacturas(Set detallefacturas) {
         this.detallefacturas = detallefacturas;
     }
 

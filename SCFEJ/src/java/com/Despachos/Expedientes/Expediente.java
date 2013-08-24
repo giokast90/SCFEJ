@@ -1,10 +1,7 @@
 package com.Despachos.Expedientes;
-// Generated 08-20-2013 07:07:18 PM by Hibernate Tools 3.2.1.GA
+// Generated 08-24-2013 05:33:50 PM by Hibernate Tools 3.2.1.GA
 
 
-import com.Expedientes.Agenda.Agenda;
-import com.Despachos.Personas.PersonaTipopersona;
-import com.Despachos.Facturacion.Factura;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -15,24 +12,20 @@ import java.util.Set;
 public class Expediente  implements java.io.Serializable {
 
 
-     private ExpedienteId id;
+     private Integer idExpediente;
      private Tipoexpediente tipoexpediente;
      private String descripcion;
      private int idUsuarioCreacion;
      private Date fechaAlta;
      private Date fechaBaja;
      private int anio;
-     private Set<Factura> facturas = new HashSet<Factura>(0);
-     private Set<PersonaTipopersona> personaTipopersonas = new HashSet<PersonaTipopersona>(0);
-     private Set<Estadoevolutivo> estadoevolutivos = new HashSet<Estadoevolutivo>(0);
-     private Set<Agenda> agendas = new HashSet<Agenda>(0);
+     private Set estadoevolutivos = new HashSet(0);
 
     public Expediente() {
     }
 
 	
-    public Expediente(ExpedienteId id, Tipoexpediente tipoexpediente, String descripcion, int idUsuarioCreacion, Date fechaAlta, Date fechaBaja, int anio) {
-        this.id = id;
+    public Expediente(Tipoexpediente tipoexpediente, String descripcion, int idUsuarioCreacion, Date fechaAlta, Date fechaBaja, int anio) {
         this.tipoexpediente = tipoexpediente;
         this.descripcion = descripcion;
         this.idUsuarioCreacion = idUsuarioCreacion;
@@ -40,26 +33,22 @@ public class Expediente  implements java.io.Serializable {
         this.fechaBaja = fechaBaja;
         this.anio = anio;
     }
-    public Expediente(ExpedienteId id, Tipoexpediente tipoexpediente, String descripcion, int idUsuarioCreacion, Date fechaAlta, Date fechaBaja, int anio, Set<Factura> facturas, Set<PersonaTipopersona> personaTipopersonas, Set<Estadoevolutivo> estadoevolutivos, Set<Agenda> agendas) {
-       this.id = id;
+    public Expediente(Tipoexpediente tipoexpediente, String descripcion, int idUsuarioCreacion, Date fechaAlta, Date fechaBaja, int anio, Set estadoevolutivos) {
        this.tipoexpediente = tipoexpediente;
        this.descripcion = descripcion;
        this.idUsuarioCreacion = idUsuarioCreacion;
        this.fechaAlta = fechaAlta;
        this.fechaBaja = fechaBaja;
        this.anio = anio;
-       this.facturas = facturas;
-       this.personaTipopersonas = personaTipopersonas;
        this.estadoevolutivos = estadoevolutivos;
-       this.agendas = agendas;
     }
    
-    public ExpedienteId getId() {
-        return this.id;
+    public Integer getIdExpediente() {
+        return this.idExpediente;
     }
     
-    public void setId(ExpedienteId id) {
-        this.id = id;
+    public void setIdExpediente(Integer idExpediente) {
+        this.idExpediente = idExpediente;
     }
     public Tipoexpediente getTipoexpediente() {
         return this.tipoexpediente;
@@ -103,33 +92,12 @@ public class Expediente  implements java.io.Serializable {
     public void setAnio(int anio) {
         this.anio = anio;
     }
-    public Set<Factura> getFacturas() {
-        return this.facturas;
-    }
-    
-    public void setFacturas(Set<Factura> facturas) {
-        this.facturas = facturas;
-    }
-    public Set<PersonaTipopersona> getPersonaTipopersonas() {
-        return this.personaTipopersonas;
-    }
-    
-    public void setPersonaTipopersonas(Set<PersonaTipopersona> personaTipopersonas) {
-        this.personaTipopersonas = personaTipopersonas;
-    }
-    public Set<Estadoevolutivo> getEstadoevolutivos() {
+    public Set getEstadoevolutivos() {
         return this.estadoevolutivos;
     }
     
-    public void setEstadoevolutivos(Set<Estadoevolutivo> estadoevolutivos) {
+    public void setEstadoevolutivos(Set estadoevolutivos) {
         this.estadoevolutivos = estadoevolutivos;
-    }
-    public Set<Agenda> getAgendas() {
-        return this.agendas;
-    }
-    
-    public void setAgendas(Set<Agenda> agendas) {
-        this.agendas = agendas;
     }
 
 

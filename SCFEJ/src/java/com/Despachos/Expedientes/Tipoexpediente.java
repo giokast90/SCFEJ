@@ -1,5 +1,5 @@
 package com.Despachos.Expedientes;
-// Generated 08-20-2013 07:07:18 PM by Hibernate Tools 3.2.1.GA
+// Generated 08-24-2013 05:33:50 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -14,7 +14,7 @@ public class Tipoexpediente  implements java.io.Serializable {
      private Integer idTipoExpediente;
      private String descripcion;
      private boolean activo;
-     private Set<Expediente> expedientes = new HashSet<Expediente>(0);
+     private Set expedientes = new HashSet(0);
 
     public Tipoexpediente() {
     }
@@ -24,7 +24,7 @@ public class Tipoexpediente  implements java.io.Serializable {
         this.descripcion = descripcion;
         this.activo = activo;
     }
-    public Tipoexpediente(String descripcion, boolean activo, Set<Expediente> expedientes) {
+    public Tipoexpediente(String descripcion, boolean activo, Set expedientes) {
        this.descripcion = descripcion;
        this.activo = activo;
        this.expedientes = expedientes;
@@ -51,11 +51,11 @@ public class Tipoexpediente  implements java.io.Serializable {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-    public Set<Expediente> getExpedientes() {
+    public Set getExpedientes() {
         return this.expedientes;
     }
     
-    public void setExpedientes(Set<Expediente> expedientes) {
+    public void setExpedientes(Set expedientes) {
         this.expedientes = expedientes;
     }
 
