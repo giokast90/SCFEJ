@@ -1,14 +1,31 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:p="http://primefaces.org/ui"
+<html lang="en" 
+      xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <body>
         <ui:composition template="/Plantillas/Principal.xhtml" >
             <ui:define name="content">
-                <p:inputText id="txtnombre"></p:inputText>
+                <div class="row">
+                    <div class="span6">
+                        <blockquote>
+                            <h2>Control de sus Expedientes.<small>Vía Internet.</small></h2>
+                        </blockquote>
+                        
+                        <blockquote>
+                            <h2>Agenda de Tareas.<small>Reuniones y Citas.</small></h2>
+                        </blockquote>
+                        
+                        <blockquote>
+                            <h2>Facturación de Expedientes.<small>Fácil y Rápido.</small></h2>
+                        </blockquote>
+                    </div>
+                    <div class="span6 pull-right">
+                        <img src="./resources/img/image1.jpg" class="img-rounded animated bounceInDown" />
+                    </div>
+                </div>
             </ui:define>
-            <ui:define name="title">Prueba</ui:define>
+            <ui:define name="title">Control de Expedientes</ui:define>
         </ui:composition>
     </body>
 </html>
