@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../Plantillas/Principal.xhtml">
+
+            <ui:define name="title">
+                Catalogo de Abogados
+            </ui:define>
+
+            <ui:define name="content">
+                <div class="row">
+                    <div class="span12">
+                        <h4 class="title-divider"> 
+                            <span>
+                                Formulario de Abogados
+                            </span>
+                        </h4>
+                        <div class="container-fluid">
+                            <div class="row-fluid">
+                                <div class="form-horizontal">
+                                    <div class="span6">
+                                        <div class="control-group hidden">
+                                            <label>Identificador:</label>
+                                            <p:inputText id="txtID" value="" readonly="true" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Nombre:</label>
+                                            <p:inputText id="txtNombre" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Primer Apellido:</label>
+                                            <p:inputText id="txtPrimerApellido" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                         <div class="control-group">
+                                            <label>Segundo Apellido:</label>
+                                            <p:inputText id="txtSegundoApellido" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                         <div class="control-group">
+                                            <label>Numero de Carnet:</label>
+                                            <p:inputText id="txtCarnet" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Cedula:</label>
+                                            <p:inputText id="txtCedula" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                        
+                                    </div>
+                                        <div class="span6">
+                                             <div class="control-group">
+                                                <label>Direccion:</label>
+                                                <p:inputText id="txtDireccion" value="" styleClass="span10"></p:inputText>
+                                            </div>
+                                            <div class="control-group">
+                                                <label>Telefono:</label>
+                                                <p:inputText id="txtTelefono" value="" styleClass="span10"></p:inputText>
+                                            </div>
+                                            <div class="control-group">
+                                                <label>Celular:</label>
+                                                <p:inputText id="txtCelular" value="" styleClass="span10"></p:inputText>
+                                            </div>
+                                            <div class="control-group">
+                                                <label>Email:</label>
+                                                <p:inputText id="txtEmail" value="" styleClass="span10"></p:inputText>
+                                            </div>
+                                            <div class="control-group">
+                                                <label>Tipo de Abogado:</label>
+                                                <p:selectOneMenu id="cboTipoAbogado" value="" >
+                                                    <f:selectItem itemLabel="Seleccione el tipo de Abogado" itemValue=""/>
+                                                    <f:selectItems value="#"/>
+                                                </p:selectOneMenu>
+                                            </div>
+                                        </div>                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
