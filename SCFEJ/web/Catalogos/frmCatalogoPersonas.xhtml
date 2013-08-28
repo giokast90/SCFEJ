@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <body>
+        <ui:composition template="../Plantillas/Principal.xhtml">
+            <ui:define name="title">Catálogo de Personas</ui:define>
+            <ui:define name="content">
+                <div class="row">
+                    <div class="span12">
+                        <h4 class="title-divider">
+                            <span>
+                                Formulario de Personas
+                            </span>
+                        </h4>
+                        <div class="container-fluid">
+                            <div class="row-fluid">
+                                <div class="form-horizontal">
+                                    <div class="span6">
+                                        <div class="control-group hidden">
+                                            <label>Identificador:</label>
+                                            <p:inputText id="txtID" value="" readonly="true" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Nombre:</label>
+                                            <p:inputText id="txtNombre" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Primer Apellido:</label>
+                                            <p:inputText id="txtPrimerApellido" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Segundo Apellido:</label>
+                                            <p:inputText id="txtSegundoApellido" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Cédula:</label>
+                                            <p:inputText id="txtCedula" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Dirección:</label>
+                                            <p:inputText id="txtDireccion" value="" styleClass="span10" ></p:inputText>
+                                        </div>
+                                    </div>
+                                    <div class="span6">
+                                        <div class="control-group">
+                                            <label>Telefono:</label>
+                                            <p:inputText id="txtTelefono" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Celular:</label>
+                                            <p:inputText id="txtCelular" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Email:</label>
+                                            <p:inputText id="txtEmail" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Observaciones:</label>
+                                            <p:inputText id="txtObservaciones" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Tipo de Persona:</label>
+                                            <p:selectOneMenu id="cboTipoPersona" value="" >
+                                                <f:selectItem itemLabel="Seleccione el tipo de Persona" itemValue=""/>
+                                                <f:selectItems value="#"/>
+                                            </p:selectOneMenu>
+                                        </div>
+    <!--                                    <div class="control-group">
+                                            <label>Observaciones:</label>
+                                            <p:selectBooleanButton id="chkActivo" value=""></p:selectBooleanButton>
+                                        </div>-->
+                                    </div>
+                                    <div class="span4 pull-center">
+                                        <div class="row-fluid">
+                                            <div class="form-actions">
+                                                <p:commandButton value="Guardar" styleClass="btn btn-primary" actionListener="#{personaBean.guardarPersona()}"/>
+                                            </div>
+                                        </div>
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
