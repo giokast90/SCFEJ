@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../Plantillas/Principal.xhtml">
+
+            <ui:define name="title">
+                Expedientes
+            </ui:define>
+
+            <ui:define name="content">
+                <div class="row">
+                    <div class="span12">
+                        <h4 class="title-divider">
+                            <span>
+                                Expedientes
+                            </span>
+                        </h4>
+                        <div class="container-fluid">
+                            <div class="row-fluid">
+                                <div class="form-horizontal">
+                                    <div class="span6">
+                                        <div class="control-group">
+                                            <label>Numero de Expediente</label>
+                                            <p:inputText id="txtID" value="" readonly="true" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Descripcion</label>
+                                            <p:inputText id="txtDescripcion" value=""  styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Usuario de Creacion</label>
+                                            <p:inputText id="txtUsuarioCreacion" value=""  styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Fecha de Alta</label>
+                                            <p:inputText id="txtFechaAlta" value=""  styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Fecha de Baja</label>
+                                            <p:inputText id="txtFechaBaja" value=""  styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Tipo de Expediente</label>
+                                            <p:inputText id="txtTipoExpediente" value=""  styleClass="span10"></p:inputText>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
