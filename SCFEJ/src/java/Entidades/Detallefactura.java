@@ -1,5 +1,5 @@
-package com.Despachos.Facturacion;
-// Generated 08-24-2013 05:33:50 PM by Hibernate Tools 3.2.1.GA
+package Entidades;
+// Generated 08-28-2013 12:12:48 AM by Hibernate Tools 3.2.1.GA
 
 
 

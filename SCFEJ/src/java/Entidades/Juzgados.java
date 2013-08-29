@@ -1,5 +1,5 @@
-package com.Expedientes.Juzgados;
-// Generated 08-24-2013 05:33:50 PM by Hibernate Tools 3.2.1.GA
+package Entidades;
+// Generated 08-28-2013 12:12:48 AM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -17,7 +17,7 @@ public class Juzgados  implements java.io.Serializable {
      private String direccion;
      private int telefono;
      private Integer celular;
-     private Set asuntojuzgados = new HashSet(0);
+     private Set<Asuntojuzgado> asuntojuzgados = new HashSet<Asuntojuzgado>(0);
 
     public Juzgados() {
     }
@@ -29,7 +29,7 @@ public class Juzgados  implements java.io.Serializable {
         this.direccion = direccion;
         this.telefono = telefono;
     }
-    public Juzgados(Departamento departamento, String descripcion, String direccion, int telefono, Integer celular, Set asuntojuzgados) {
+    public Juzgados(Departamento departamento, String descripcion, String direccion, int telefono, Integer celular, Set<Asuntojuzgado> asuntojuzgados) {
        this.departamento = departamento;
        this.descripcion = descripcion;
        this.direccion = direccion;
@@ -80,11 +80,11 @@ public class Juzgados  implements java.io.Serializable {
     public void setCelular(Integer celular) {
         this.celular = celular;
     }
-    public Set getAsuntojuzgados() {
+    public Set<Asuntojuzgado> getAsuntojuzgados() {
         return this.asuntojuzgados;
     }
     
-    public void setAsuntojuzgados(Set asuntojuzgados) {
+    public void setAsuntojuzgados(Set<Asuntojuzgado> asuntojuzgados) {
         this.asuntojuzgados = asuntojuzgados;
     }
 

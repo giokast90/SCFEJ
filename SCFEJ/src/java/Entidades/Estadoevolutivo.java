@@ -1,8 +1,7 @@
-package com.Despachos.Expedientes;
-// Generated 08-24-2013 05:33:50 PM by Hibernate Tools 3.2.1.GA
+package Entidades;
+// Generated 08-28-2013 12:12:48 AM by Hibernate Tools 3.2.1.GA
 
 
-import com.Despachos.Expedientes.Expediente;
 import java.util.Date;
 
 /**
@@ -26,6 +25,17 @@ public class Estadoevolutivo  implements java.io.Serializable {
     public Estadoevolutivo() {
     }
 
+	
+    public Estadoevolutivo(Usuarios usuarios, Tipoaviso tipoaviso, Date fechaCreacion, Date fechaCita, String descripcion, Date fechaAviso, Date horaCita, Date horaAviso) {
+        this.usuarios = usuarios;
+        this.tipoaviso = tipoaviso;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaCita = fechaCita;
+        this.descripcion = descripcion;
+        this.fechaAviso = fechaAviso;
+        this.horaCita = horaCita;
+        this.horaAviso = horaAviso;
+    }
     public Estadoevolutivo(Usuarios usuarios, Expediente expediente, Tipoaviso tipoaviso, Date fechaCreacion, Date fechaCita, String descripcion, Date fechaAviso, Date horaCita, Date horaAviso, String documento) {
        this.usuarios = usuarios;
        this.expediente = expediente;
