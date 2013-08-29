@@ -3,10 +3,15 @@
 <html lang="en" 
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:h="http://java.sun.com/jsf/html">
 
     <h:head>
+        <script>
+            function limpiarForm()
+            {
+                document.getElementById("frm1").reset();
+            }
+        </script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link href="./../resources/Styles/bootstrap.css" rel="stylesheet" type="text/css" />
         <link href="./../resources/Styles/colour-blue.css" rel="stylesheet" type="text/css" />
@@ -18,6 +23,7 @@
     </h:head>
 
     <h:body class="page has-navbar-fixed-top">
+        <h:form id="frm1">
             <div id="navigation" class="wrapper">
                 <div class="navbar navbar-static-top">
                     <!--Header & Branding region-->
@@ -55,99 +61,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="container">
-                        <div class="navbar-inner">
-                            <!--mobile collapse menu button-->
-                            <a class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse">
-                                <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar">
-                                </span><span class="icon-bar"></span></a>
-                            <!--everything within this div is collapsed on mobile-->
-                            <div class="nav-collapse collapse">
-                                <!--main navigation-->
-                                <ul class="nav user-menu pull-right">
-                                    <li class="dropdown"><a href="#" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">Iniciar Sesión</a>
-                                      <div class="dropdown-menu" role="menu" aria-labelledby="login-drop">
-                                          <h:form styleClass="form-inline" id="login-form-drop" >
-                                            <div class="input-append">
-                                                <input type="text" id="txtEmail" styleClass="input-small email" placeholder="Correo" />
-                                                <input type="password" id="txtPassword" styleClass="input-small password" placeholder="Contraseña" />
-                                                <input id="btnLogin" type="button" class="btn btn-primary login" value="Login" />
-                                            </div>
-                                          </h:form>
-                                        <span class="divider" role="menuitem"></span> <small role="menuitem">Not a member? <a href="#" class="signup">Sign up now!</a></small> <small role="menuitem"><a href="#">Forgotten password?</a></small> </div>
-                                    </li>
-                                </ul>
-                                <ul class="nav" id="main-menu">
-                                    <li class="home-link"><a href="./index.xhtml"><i class="icon-home hidden-phone"/></a></li>
-                                    <li class="dropdown"><a href="#" class="dropdown-toggle menu-item" id="A1" data-toggle="dropdown">
-                                        Operaciones +</a>
-                                        <!-- Dropdown Menu -->
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="about-drop">
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Clientes</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Pagos</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Depósitos</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Cuentas</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Cuenta Maestra</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Estaciones</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Terminales</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#" class="dropdown-toggle menu-item" id="A2" data-toggle="dropdown">
-                                        SmartMeters +</a>
-                                        <!-- Dropdown Menu -->
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="about-drop">
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Catálogos Generales</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Catálogo de Vehículos</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Configuración por País</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Planes</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#" class="dropdown-toggle menu-item" id="A3" data-toggle="dropdown">
-                                        Costómetro +</a>
-                                        <!-- Dropdown Menu -->
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="about-drop">
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Catálogos Generales</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Catálogo de Vehículos</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Configuración por País</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Planes</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#" class="dropdown-toggle menu-item" id="A4" data-toggle="dropdown">
-                                        Reportes +</a>
-                                        <!-- Dropdown Menu -->
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="about-drop">
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Catálogos Generales</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Catálogo de Vehículos</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Configuración por País</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Planes</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#" class="dropdown-toggle menu-item" id="A5" data-toggle="dropdown">
-                                        Seguridad +</a>
-                                        <!-- Dropdown Menu -->
-                                        <ul class="dropdown-menu" role="menu" aria-labelledby="about-drop">
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Catálogos Generales</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Catálogo de Vehículos</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Configuración por País</a></li>
-                                            <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Planes</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!--/.nav-collapse -->
-                        </div>
-                    </div>
                 </div>
             </div>
-            
+
             <div id="content">
                 <div class="container">
-                    <h:form id="form1">
-                        <ui:insert name="content"></ui:insert>
-                    </h:form>
+                    <ui:insert name="content"></ui:insert>
                 </div>
             </div>
-            
+
             <footer id="footer">
                 <div class="container">
                     <div class="row">
@@ -211,6 +133,7 @@
                     </div>
                 </div>
             </footer>
+        </h:form>
         <!--Scripts --> 
         <script src="./../resources/Scripts/jquery.js"></script> 
 

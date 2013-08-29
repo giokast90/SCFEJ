@@ -1,5 +1,5 @@
-package com.Despachos.Expedientes;
-// Generated 08-24-2013 05:33:50 PM by Hibernate Tools 3.2.1.GA
+package Entidades;
+// Generated 08-28-2013 12:12:48 AM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -13,7 +13,7 @@ public class Tipoaviso  implements java.io.Serializable {
 
      private Integer idTipoAviso;
      private String descripcion;
-     private Set estadoevolutivos = new HashSet(0);
+     private Set<Estadoevolutivo> estadoevolutivos = new HashSet<Estadoevolutivo>(0);
 
     public Tipoaviso() {
     }
@@ -22,7 +22,7 @@ public class Tipoaviso  implements java.io.Serializable {
     public Tipoaviso(String descripcion) {
         this.descripcion = descripcion;
     }
-    public Tipoaviso(String descripcion, Set estadoevolutivos) {
+    public Tipoaviso(String descripcion, Set<Estadoevolutivo> estadoevolutivos) {
        this.descripcion = descripcion;
        this.estadoevolutivos = estadoevolutivos;
     }
@@ -41,11 +41,11 @@ public class Tipoaviso  implements java.io.Serializable {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public Set getEstadoevolutivos() {
+    public Set<Estadoevolutivo> getEstadoevolutivos() {
         return this.estadoevolutivos;
     }
     
-    public void setEstadoevolutivos(Set estadoevolutivos) {
+    public void setEstadoevolutivos(Set<Estadoevolutivo> estadoevolutivos) {
         this.estadoevolutivos = estadoevolutivos;
     }
 

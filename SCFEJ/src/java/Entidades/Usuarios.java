@@ -1,5 +1,5 @@
-package com.Despachos.Expedientes;
-// Generated 08-24-2013 05:33:50 PM by Hibernate Tools 3.2.1.GA
+package Entidades;
+// Generated 08-28-2013 12:12:48 AM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -15,7 +15,8 @@ public class Usuarios  implements java.io.Serializable {
      private String alias;
      private String contrasena;
      private boolean activo;
-     private Set estadoevolutivos = new HashSet(0);
+     private Set<Estadoevolutivo> estadoevolutivos = new HashSet<Estadoevolutivo>(0);
+     private Set<Expediente> expedientes = new HashSet<Expediente>(0);
 
     public Usuarios() {
     }
@@ -27,12 +28,13 @@ public class Usuarios  implements java.io.Serializable {
         this.contrasena = contrasena;
         this.activo = activo;
     }
-    public Usuarios(int idUsuarios, String alias, String contrasena, boolean activo, Set estadoevolutivos) {
+    public Usuarios(int idUsuarios, String alias, String contrasena, boolean activo, Set<Estadoevolutivo> estadoevolutivos, Set<Expediente> expedientes) {
        this.idUsuarios = idUsuarios;
        this.alias = alias;
        this.contrasena = contrasena;
        this.activo = activo;
        this.estadoevolutivos = estadoevolutivos;
+       this.expedientes = expedientes;
     }
    
     public int getIdUsuarios() {
@@ -63,12 +65,19 @@ public class Usuarios  implements java.io.Serializable {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-    public Set getEstadoevolutivos() {
+    public Set<Estadoevolutivo> getEstadoevolutivos() {
         return this.estadoevolutivos;
     }
     
-    public void setEstadoevolutivos(Set estadoevolutivos) {
+    public void setEstadoevolutivos(Set<Estadoevolutivo> estadoevolutivos) {
         this.estadoevolutivos = estadoevolutivos;
+    }
+    public Set<Expediente> getExpedientes() {
+        return this.expedientes;
+    }
+    
+    public void setExpedientes(Set<Expediente> expedientes) {
+        this.expedientes = expedientes;
     }
 
 

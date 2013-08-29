@@ -1,5 +1,5 @@
-package com.Expedientes.Juzgados;
-// Generated 08-24-2013 05:33:50 PM by Hibernate Tools 3.2.1.GA
+package Entidades;
+// Generated 08-28-2013 12:12:48 AM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -12,19 +12,22 @@ public class Asuntojudicial  implements java.io.Serializable {
 
 
      private Integer idAsuntoJudicial;
+     private Tipoasunto tipoasunto;
      private String descripcion;
      private boolean activo;
-     private Set asuntojuzgados = new HashSet(0);
+     private Set<Asuntojuzgado> asuntojuzgados = new HashSet<Asuntojuzgado>(0);
 
     public Asuntojudicial() {
     }
 
 	
-    public Asuntojudicial(String descripcion, boolean activo) {
+    public Asuntojudicial(Tipoasunto tipoasunto, String descripcion, boolean activo) {
+        this.tipoasunto = tipoasunto;
         this.descripcion = descripcion;
         this.activo = activo;
     }
-    public Asuntojudicial(String descripcion, boolean activo, Set asuntojuzgados) {
+    public Asuntojudicial(Tipoasunto tipoasunto, String descripcion, boolean activo, Set<Asuntojuzgado> asuntojuzgados) {
+       this.tipoasunto = tipoasunto;
        this.descripcion = descripcion;
        this.activo = activo;
        this.asuntojuzgados = asuntojuzgados;
@@ -36,6 +39,13 @@ public class Asuntojudicial  implements java.io.Serializable {
     
     public void setIdAsuntoJudicial(Integer idAsuntoJudicial) {
         this.idAsuntoJudicial = idAsuntoJudicial;
+    }
+    public Tipoasunto getTipoasunto() {
+        return this.tipoasunto;
+    }
+    
+    public void setTipoasunto(Tipoasunto tipoasunto) {
+        this.tipoasunto = tipoasunto;
     }
     public String getDescripcion() {
         return this.descripcion;
@@ -51,11 +61,11 @@ public class Asuntojudicial  implements java.io.Serializable {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-    public Set getAsuntojuzgados() {
+    public Set<Asuntojuzgado> getAsuntojuzgados() {
         return this.asuntojuzgados;
     }
     
-    public void setAsuntojuzgados(Set asuntojuzgados) {
+    public void setAsuntojuzgados(Set<Asuntojuzgado> asuntojuzgados) {
         this.asuntojuzgados = asuntojuzgados;
     }
 

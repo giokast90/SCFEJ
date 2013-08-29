@@ -1,5 +1,5 @@
-package com.Despachos.Abogados;
-// Generated 08-24-2013 05:33:50 PM by Hibernate Tools 3.2.1.GA
+package Entidades;
+// Generated 08-28-2013 12:12:48 AM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -21,7 +21,7 @@ public class Abogados  implements java.io.Serializable {
      private Integer telefono;
      private Integer celular;
      private String email;
-     private Set abogadoTipoabogados = new HashSet(0);
+     private Set<AbogadoTipoabogado> abogadoTipoabogados = new HashSet<AbogadoTipoabogado>(0);
 
     public Abogados() {
     }
@@ -34,7 +34,7 @@ public class Abogados  implements java.io.Serializable {
         this.cedula = cedula;
         this.direccion = direccion;
     }
-    public Abogados(String nombre, String primerApellido, String segundoApellido, String noCarne, String cedula, String direccion, Integer telefono, Integer celular, String email, Set abogadoTipoabogados) {
+    public Abogados(String nombre, String primerApellido, String segundoApellido, String noCarne, String cedula, String direccion, Integer telefono, Integer celular, String email, Set<AbogadoTipoabogado> abogadoTipoabogados) {
        this.nombre = nombre;
        this.primerApellido = primerApellido;
        this.segundoApellido = segundoApellido;
@@ -117,11 +117,11 @@ public class Abogados  implements java.io.Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-    public Set getAbogadoTipoabogados() {
+    public Set<AbogadoTipoabogado> getAbogadoTipoabogados() {
         return this.abogadoTipoabogados;
     }
     
-    public void setAbogadoTipoabogados(Set abogadoTipoabogados) {
+    public void setAbogadoTipoabogados(Set<AbogadoTipoabogado> abogadoTipoabogados) {
         this.abogadoTipoabogados = abogadoTipoabogados;
     }
 
