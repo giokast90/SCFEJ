@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./../Plantillas/Principal.xhtml">
+
+            <ui:define name="title">
+                FACTURAS
+            </ui:define>
+
+            <ui:define name="content">
+                <div class="row">
+                    <div class="span12">
+                        <h4 class="title-divider">
+                            <span>
+                                Formulario de Facturas
+                            </span>
+                        </h4>
+                        <div class="container-fluid">
+                            <div class="row-fluid">
+                                <div class="form-horizontal">
+                                    <div class="span6">
+                                        <div class="control-group">
+                                            <label>Numero de expediente</label>
+                                            <p:inputText id="txtIDexpediente" value=""  styleClass="span10"></p:inputText>
+                                        </div>
+                                         <div class="control-group">
+                                            <label>Numero de factura</label>
+                                            <p:inputText id="txtIDfactura" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Fecha de creacion</label>
+                                            <p:inputText id="txtfechacreacion" value=""  styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Descripcion</label>
+                                            <p:inputText id="txtdescripcion" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                        <div class="control-group">
+                                            <label>Costo</label>
+                                            <p:inputText id="txtcosto" value="" styleClass="span10"></p:inputText>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
