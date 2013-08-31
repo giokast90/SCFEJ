@@ -141,7 +141,8 @@ public class PersonaBean {
         
         entidad.guardarPersona(entidad);
         
-        entidadPersonaTipoPersona.setIdpersonas(idPersona);
+        entidadPersonaTipoPersona.setIdtipopersona(entidadPersonaTipoPersona.getIdtipopersona());
+        entidadPersonaTipoPersona.setActivo(entidadPersonaTipoPersona.isActivo());
         
         entidadPersonaTipoPersona.GuardarTipodePersona(entidadPersonaTipoPersona);
         

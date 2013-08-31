@@ -17,7 +17,7 @@ public class PersonaTipoPersonaDAO {
     public void guardarTipoPersona(PersonaTipopersona entidad) throws SQLException{
     
         Connection conexion = new ConexionDB().conectar();
-        String query = "insert into persona_tipopersona values("+entidad.getIdpersonas()+","+entidad.getIdtipopersona()+","+entidad.isActivo()+");";
+        String query = "insert into persona_tipopersona values((select max(idPersona) FROM personas),"+entidad.getIdtipopersona()+","+entidad.isActivo()+");";
         PreparedStatement exec = conexion.prepareStatement(query);
         exec.executeUpdate();
         conexion.close();
