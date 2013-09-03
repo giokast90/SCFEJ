@@ -14,6 +14,7 @@
             </ui:define>
 
             <ui:define name="content">
+                <p:growl id="msgs" showDetail="true"/>
                 <div class="row">
                     <div class="span12">
                         <h4 class="title-divider"> 
@@ -75,7 +76,13 @@
                                                     <f:selectItems value="#"/>
                                                 </p:selectOneMenu>
                                             </div>
-                                        </div>                                   
+                                        </div>                                    
+                                  <br/>
+                                <div class="span4 pull-center">
+                                    <div class="row-fluid">
+                                        <p:commandButton id="btnGuardar" value="Guardar" update="msgs" actionListener="#{abogadosBean.msg()}" oncomplete="limpiarForm()"/>
+                                    </div>
+                                </div>   
                                 </div>
                             </div>
                         </div>
