@@ -21,30 +21,9 @@ public class Abogados  implements java.io.Serializable {
      private Integer telefono;
      private Integer celular;
      private String email;
-     private Set<AbogadoTipoabogado> abogadoTipoabogados = new HashSet<AbogadoTipoabogado>(0);
+    
 
     public Abogados() {
-    }
-
-	
-    public Abogados(String nombre, String primerApellido, String noCarne, String cedula, String direccion) {
-        this.nombre = nombre;
-        this.primerApellido = primerApellido;
-        this.noCarne = noCarne;
-        this.cedula = cedula;
-        this.direccion = direccion;
-    }
-    public Abogados(String nombre, String primerApellido, String segundoApellido, String noCarne, String cedula, String direccion, Integer telefono, Integer celular, String email, Set<AbogadoTipoabogado> abogadoTipoabogados) {
-       this.nombre = nombre;
-       this.primerApellido = primerApellido;
-       this.segundoApellido = segundoApellido;
-       this.noCarne = noCarne;
-       this.cedula = cedula;
-       this.direccion = direccion;
-       this.telefono = telefono;
-       this.celular = celular;
-       this.email = email;
-       this.abogadoTipoabogados = abogadoTipoabogados;
     }
    
     public Integer getIdAbogado() {
@@ -117,17 +96,6 @@ public class Abogados  implements java.io.Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-    public Set<AbogadoTipoabogado> getAbogadoTipoabogados() {
-        return this.abogadoTipoabogados;
-    }
-    
-    public void setAbogadoTipoabogados(Set<AbogadoTipoabogado> abogadoTipoabogados) {
-        this.abogadoTipoabogados = abogadoTipoabogados;
-    }
-
-
-
-
 }
 
 
