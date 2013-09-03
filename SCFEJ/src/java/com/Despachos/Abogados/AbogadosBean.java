@@ -34,12 +34,12 @@ public class AbogadosBean {
     public AbogadosBean() {       
         entidad = new Abogados();
     }
-
-    public Integer getidAbogado(){
+    
+    public int getIdAbogado() {
         return idAbogado;
     }
-   
-    public void setidAbogado(Integer idAbogado) {
+
+    public void setIdAbogado(int idAbogado) {
         this.idAbogado = idAbogado;
     }
 
