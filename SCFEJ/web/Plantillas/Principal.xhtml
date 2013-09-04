@@ -13,11 +13,19 @@
             
             <div id="content">
                 <div class="container">
-                    <ui:insert name="content"></ui:insert>
+                    <center>
+                        <ui:insert name="content"></ui:insert>
+                    </center>
                 </div>
             </div>
 
         </h:form>
+        <script>
+            function limpiarForm()
+            {
+                document.getElementById("frm1").reset();
+            }
+        </script>
     </h:body>
 
 </html>
