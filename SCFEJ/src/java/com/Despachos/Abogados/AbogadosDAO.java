@@ -21,9 +21,6 @@ public class AbogadosDAO {
                         +entidad.getCelular()+",'"+entidad.getEmail()+"');";
         PreparedStatement exec = conexion.prepareStatement(query);
         exec.executeUpdate();
-        conexion.close();
-        
-    }
-    
-    
+        conexion.close();        
+    }  
 }

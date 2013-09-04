@@ -7,6 +7,7 @@ package com.Despachos.Abogados;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import Entidades.Abogados;
+import Entidades.AbogadoTipoabogado;
 import java.sql.SQLException;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -30,8 +31,12 @@ public class AbogadosBean {
     private int celular;
     private String email;
     private Abogados entidad;
+    private AbogadoTipoabogado entidadAbogadoTipoabogado;
     
-    public AbogadosBean() {       
+    
+    public AbogadosBean() {      
+        
+        entidadAbogadoTipoabogado = new AbogadoTipoabogado();
         entidad = new Abogados();
     }
     
@@ -113,8 +118,16 @@ public class AbogadosBean {
     public void setEmail(String email) {
         this.email = email;
     }
-    
-    public void guardarAbogados() throws SQLException{
+
+    public AbogadoTipoabogado getEntidadAbogadoTipoabogado() {
+        return entidadAbogadoTipoabogado;
+    }
+
+    public void setEntidadAbogadoTipoabogado(AbogadoTipoabogado entidadAbogadoTipoabogado) {
+        this.entidadAbogadoTipoabogado = entidadAbogadoTipoabogado;
+    }
+
+      public void guardarAbogados() throws SQLException{
     
         entidad.setIdAbogado(idAbogado);
         entidad.setNombre(nombre);
@@ -128,8 +141,13 @@ public class AbogadosBean {
         entidad.setEmail(email);
         
         entidad.guardarAbogados(entidad);
-               
-    }
+        
+        entidadAbogadoTipoabogado.setIdtipoabogado(entidadAbogadoTipoabogado.getIdtipoabogado());
+        entidadAbogadoTipoabogado.setActivo(entidadAbogadoTipoabogado.isActivo());   
+        
+        entidadAbogadoTipoabogado.GuardarTipodeAbogado(entidadAbogadoTipoabogado);
+        
+   }
     
     public void msg() {
         boolean comprobar=true;

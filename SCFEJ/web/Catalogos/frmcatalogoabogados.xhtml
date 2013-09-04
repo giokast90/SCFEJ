@@ -7,7 +7,7 @@
 
     <body>
         <ui:composition template="../Plantillas/Principal.xhtml">
-            <ui:define name="title">Catálogo de Personas</ui:define>
+            <ui:define name="title">Catálogo de Abogados</ui:define>
             <ui:define name="content">
                 <p:growl id="msgs" showDetail="true"/>
                 <p:panel header="Registrar Datos del Abogado" style="margin-left: 10px;" toggleable="true">
@@ -33,9 +33,9 @@
                         <label>Email:</label>
                         <p:inputText id="txtEmail" value="#{abogadosBean.email}"></p:inputText>
                         <label>Tipo de Abogado:</label>
-                        <p:selectOneMenu id="cboTipoAbogado" value="#" >
+                        <p:selectOneMenu id="cboTipoAbogado" value="#{abogadosBean.entidadAbogadoTipoabogado.idtipoabogado}" >
                             <f:selectItem itemLabel="Seleccione el tipo de Abogado" itemValue=""/>
-                            <f:selectItems value="#"/>
+                            <f:selectItems value="#{tipoAbogadosBean.listaTipoAbogados()}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
                     <p:separator/>
