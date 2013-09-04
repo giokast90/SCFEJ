@@ -14,7 +14,6 @@ public class AbogadosTipoAbogadosDAO {
     
     public AbogadosTipoAbogadosDAO(){
     }
-   
     public void guardarTipoAbogado(AbogadoTipoabogado entidad) throws SQLException{
     
         Connection conexion = new ConexionDB().conectar();

@@ -9,7 +9,6 @@ import java.sql.SQLException;
  */
 public class AbogadoTipoabogado  implements java.io.Serializable {
 
-
      private Integer idAbogado;
      private Integer idtipoabogado;
      private boolean activo;

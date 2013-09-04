@@ -2,7 +2,6 @@ package Entidades;
 // Generated 08-28-2013 12:12:48 AM by Hibernate Tools 3.2.1.GA
 
 import com.Despachos.Abogados.TipoAbogadosDAO;
-import com.sun.org.apache.bcel.internal.generic.Select;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.faces.model.SelectItem;

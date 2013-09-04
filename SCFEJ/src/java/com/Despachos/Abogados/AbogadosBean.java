@@ -147,6 +147,7 @@ public class AbogadosBean {
         
         entidadAbogadoTipoabogado.GuardarTipodeAbogado(entidadAbogadoTipoabogado);
         
+        
    }
     
     public void msg() {

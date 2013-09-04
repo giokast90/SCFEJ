@@ -11,10 +11,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.model.SelectItem;
 
-/**
- *
- * @author Usuario
- */
 @ManagedBean
 @RequestScoped
 public class TipoAbogadosBean {

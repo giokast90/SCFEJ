@@ -6,10 +6,7 @@ package com.Despachos.Abogados;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-/**
- *
- * @author Usuario
- */
+
 @ManagedBean
 @RequestScoped
 public class AbogadosTipoAbogadosBean {

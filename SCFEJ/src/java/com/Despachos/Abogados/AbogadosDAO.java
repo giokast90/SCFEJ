@@ -11,7 +11,6 @@ public class AbogadosDAO {
     public AbogadosDAO() {
         
     }
-    
      public void guardarAbogados(Abogados entidad) throws SQLException{
     
         Connection conexion = new ConexionDB().conectar();
