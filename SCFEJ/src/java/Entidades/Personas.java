@@ -4,6 +4,8 @@ package Entidades;
 
 import com.Despachos.Clientes.PersonasDAO;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Personas{
 
@@ -20,7 +22,7 @@ public class Personas{
      private String observaciones;
      private PersonasDAO dao;
 
-    public Personas() {
+    public Personas() throws SQLException {
         
         dao = new PersonasDAO();
         
@@ -102,7 +104,11 @@ public class Personas{
         dao.guardarPersona(entidad);
     
     }
+    
+    public List<Personas> listaPersonas() throws SQLException{
+    
+        return dao.listaPersona();
+    
+    }
 
 }
-
-

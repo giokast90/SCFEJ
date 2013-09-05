@@ -6,14 +6,15 @@ To change this template, choose Tools |
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
     <body>
         <ui:composition template="../Plantillas/Principal.xhtml">
             <ui:define name="title">Catálogo de Personas</ui:define>
             <ui:define name="content">
                 <p:growl id="msgs" showDetail="true"/>
                 <p:panel header="Registrar Datos de Personas" style="margin-left: 400px; margin-right: 400px;" toggleable="true" toggleOrientation="horizontal">
-                    <p:panelGrid columns="2">
+                    <h:panelGrid columns="2">
                         <label>Identificador:</label>
                         <p:inputText id="txtID" value="#{personaBean.idPersona}" readonly="true"></p:inputText>
                         <label>Nombre:</label>
@@ -41,10 +42,136 @@ To change this template, choose Tools |
                         <p:inputText id="txtObservaciones" value="#{personaBean.observaciones}" ></p:inputText>
                         <label>Activo:</label>
                         <p:selectBooleanCheckbox value="#{personaBean.entidadPersonaTipoPersona.activo}" />
-                    </p:panelGrid>
+                    </h:panelGrid>
                     <p:separator/>
-                    <p:commandButton id="btnGuardar" value="Guardar" update="msgs" type="button" icon="ui-icon-check" actionListener="#{personaBean.msg()}" oncomplete="limpiarForm()"/>
+                    <p:commandButton id="btnGuardar" value="Guardar" update="msgs" type="button" icon="ui-icon-disk" actionListener="#{personaBean.msg()}" oncomplete="limpiarForm()"/>
                 </p:panel>
+                <br/>
+                <br/>
+                <p:dataTable value="#{personaBean.listaPersonas()}" id="dttPersonas" editable="true">  
+  
+                    <f:facet name="header">  
+                        Registro de Personas
+                    </f:facet>  
+
+                    <p:ajax event="rowEdit" update=":frm1:msgs" />  
+                    <p:ajax event="rowEditCancel" update=":frm1:msgs" />  
+
+                    <p:column headerText="Identificador" style="width:30%">  
+                        <p:cellEditor>  
+                            <f:facet name="output">  
+                                <h:outputText value="#{personaBean.idPersona}" />
+                            </f:facet>  
+                            <f:facet name="input">  
+                                <p:inputText value="#{personaBean.idPersona}" style="width:100%"/>  
+                            </f:facet>  
+                        </p:cellEditor>  
+                    </p:column>  
+
+                    <p:column headerText="Nombre" style="width:20%">  
+                        <p:cellEditor>  
+                            <f:facet name="output">  
+                                <h:outputText value="#{personaBean.nombrePersona}" />  
+                            </f:facet>  
+                            <f:facet name="input">  
+                                <p:inputText value="#{personaBean.nombrePersona}" style="width:100%"/>  
+                            </f:facet>  
+                        </p:cellEditor>  
+                    </p:column>  
+
+                    <p:column headerText="Primer Apellido" style="width:24%">  
+                        <p:cellEditor>  
+                            <f:facet name="output">  
+                                <h:outputText value="#{personaBean.primerApellidoPersona}" />  
+                            </f:facet>  
+                            <f:facet name="input"> 
+                                <p:inputText value="#{personaBean.primerApellidoPersona}" style="width:100%"/>  
+                            </f:facet>  
+                        </p:cellEditor>  
+                    </p:column>  
+                    
+                    <p:column headerText="Segundo Apellido" style="width:30%">  
+                        <p:cellEditor>  
+                            <f:facet name="output">  
+                                <h:outputText value="#{personaBean.segundoApellidoPersona}" />
+                            </f:facet>  
+                            <f:facet name="input">  
+                                <p:inputText value="#{personaBean.segundoApellidoPersona}" style="width:100%"/>  
+                            </f:facet>  
+                        </p:cellEditor>  
+                    </p:column>  
+
+                    <p:column headerText="Cedula" style="width:20%">  
+                        <p:cellEditor>  
+                            <f:facet name="output">  
+                                <h:outputText value="#{personaBean.cedulaPersona}" />  
+                            </f:facet>  
+                            <f:facet name="input">  
+                                <p:inputText value="#{personaBean.cedulaPersona}" style="width:100%"/>  
+                            </f:facet>  
+                        </p:cellEditor>  
+                    </p:column>  
+
+                    <p:column headerText="Direccion" style="width:24%">  
+                        <p:cellEditor>  
+                            <f:facet name="output">  
+                                <h:outputText value="#{personaBean.direccionPersona}" />  
+                            </f:facet>  
+                            <f:facet name="input"> 
+                                <p:inputText value="#{personaBean.direccionPersona}" style="width:100%"/>  
+                            </f:facet>  
+                        </p:cellEditor>  
+                    </p:column>
+                    
+                    <p:column headerText="Telefono" style="width:30%">  
+                        <p:cellEditor>  
+                            <f:facet name="output">  
+                                <h:outputText value="#{personaBean.telefonoPersona}" />
+                            </f:facet>  
+                            <f:facet name="input">  
+                                <p:inputText value="#{personaBean.telefonoPersona}" style="width:100%"/>  
+                            </f:facet>  
+                        </p:cellEditor>  
+                    </p:column>  
+
+                    <p:column headerText="Celular" style="width:20%">  
+                        <p:cellEditor>  
+                            <f:facet name="output">  
+                                <h:outputText value="#{personaBean.celularPersona}" />  
+                            </f:facet>  
+                            <f:facet name="input">  
+                                <p:inputText value="#{personaBean.celularPersona}" style="width:100%"/>  
+                            </f:facet>  
+                        </p:cellEditor>  
+                    </p:column>  
+
+                    <p:column headerText="Email" style="width:24%">  
+                        <p:cellEditor>  
+                            <f:facet name="output">  
+                                <h:outputText value="#{personaBean.emailPersona}" />  
+                            </f:facet>  
+                            <f:facet name="input"> 
+                                <p:inputText value="#{personaBean.emailPersona}" style="width:100%"/>  
+                            </f:facet>  
+                        </p:cellEditor>  
+                    </p:column>
+
+                    <p:column headerText="Observaciones" style="width:24%">  
+                        <p:cellEditor>  
+                            <f:facet name="output">  
+                                <h:outputText value="#{personaBean.observaciones}" />  
+                            </f:facet>  
+                            <f:facet name="input"> 
+                                <p:inputText value="#{personaBean.observaciones}" style="width:100%"/>  
+                            </f:facet>  
+                        </p:cellEditor>  
+                    </p:column>  
+
+                    <p:column style="width:6%">  
+                        <p:rowEditor />  
+                    </p:column>  
+
+                </p:dataTable> 
             </ui:define>
         </ui:composition>
     </body>

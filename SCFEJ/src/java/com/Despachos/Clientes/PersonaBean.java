@@ -9,6 +9,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import Entidades.Personas;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
@@ -30,7 +32,7 @@ public class PersonaBean {
     private Personas entidad;
     private PersonaTipopersona entidadPersonaTipoPersona;
     
-    public PersonaBean() {
+    public PersonaBean() throws SQLException {
         entidadPersonaTipoPersona = new PersonaTipopersona();
         entidad = new Personas();
     }
@@ -159,6 +161,12 @@ public class PersonaBean {
             FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Almacenamiento de Datos","Datos guardados exitosamente");
             FacesContext.getCurrentInstance().addMessage(null, msg);
         }  
+    }
+    
+    public List<Personas> listaPersonas() throws SQLException{
+    
+        return entidad.listaPersonas();
+    
     }
     
 }

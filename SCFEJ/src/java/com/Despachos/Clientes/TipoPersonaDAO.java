@@ -28,6 +28,7 @@ public class TipoPersonaDAO {
         while(resultado.next()){
             lista.add(new SelectItem(resultado.getInt("idTipoPersona"),resultado.getString("descripcion")));
         }
+        conexion.close();
 	return lista;
         
     }
