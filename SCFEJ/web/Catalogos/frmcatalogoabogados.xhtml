@@ -1,4 +1,3 @@
-<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:p="http://primefaces.org/ui"
@@ -38,6 +37,8 @@
                             <f:selectItem itemLabel="Seleccione el tipo de Abogado" itemValue=""/>
                             <f:selectItems value="#{tipoAbogadosBean.listaTipoAbogados()}"/>
                         </p:selectOneMenu>
+                         <label>Activo:</label>
+                         <p:selectBooleanCheckbox value="#{abogadosBean.entidadAbogadoTipoabogado.activo}" />
                     </p:panelGrid>
                     <p:separator/>
                     <p:commandButton id="btnGuardar" value="Guardar" update="msgs" actionListener="#{abogadosBean.msg()}" oncomplete="limpiarForm()"></p:commandButton>
