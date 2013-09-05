@@ -139,12 +139,12 @@ public class PersonaBean {
         entidad.setEmailPersona(emailPersona);
         entidad.setObservaciones(observaciones);
         
-        //entidad.guardarPersona(entidad);
+        entidad.guardarPersona(entidad);
         
         entidadPersonaTipoPersona.setIdtipopersona(entidadPersonaTipoPersona.getIdtipopersona());
         entidadPersonaTipoPersona.setActivo(entidadPersonaTipoPersona.isActivo());
         
-        //entidadPersonaTipoPersona.GuardarTipodePersona(entidadPersonaTipoPersona);
+        entidadPersonaTipoPersona.GuardarTipodePersona(entidadPersonaTipoPersona);
         
     }
     
