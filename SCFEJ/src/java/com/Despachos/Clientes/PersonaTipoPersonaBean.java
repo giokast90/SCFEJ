@@ -7,10 +7,6 @@ package com.Despachos.Clientes;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-/**
- *
- * @author Tellin
- */
 @ManagedBean
 @RequestScoped
 public class PersonaTipoPersonaBean {

@@ -1,13 +1,8 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.Despachos.Clientes;
 
 import Conexion.ConexionDB;
-import Entidades.Tipopersona;
 import com.mysql.jdbc.Connection;
-import com.sun.org.apache.bcel.internal.generic.Select;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

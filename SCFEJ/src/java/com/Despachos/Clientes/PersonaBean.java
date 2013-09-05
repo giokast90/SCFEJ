@@ -12,10 +12,7 @@ import java.sql.SQLException;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
-/**
- *
- * @author Tellin
- */
+
 @ManagedBean
 @RequestScoped
 public class PersonaBean {

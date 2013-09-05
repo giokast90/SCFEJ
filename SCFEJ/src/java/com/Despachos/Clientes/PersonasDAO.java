@@ -12,7 +12,6 @@ public class PersonasDAO {
     public PersonasDAO() {
         
     }
-    
     public void guardarPersona(Personas entidad) throws SQLException{
     
         Connection conexion = new ConexionDB().conectar();

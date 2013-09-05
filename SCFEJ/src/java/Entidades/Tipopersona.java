@@ -1,6 +1,4 @@
 package Entidades;
-// Generated 08-28-2013 12:12:48 AM by Hibernate Tools 3.2.1.GA
-
 
 import com.Despachos.Clientes.TipoPersonaDAO;
 import java.sql.SQLException;
