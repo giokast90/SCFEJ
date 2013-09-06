@@ -48,7 +48,7 @@ To change this template, choose Tools |
                 </p:panel>
                 <br/>
                 <br/>
-                <p:dataTable value="#{personaBean.listaPersonas()}" id="dttPersonas" editable="true">  
+                <p:dataTable value="#{personaBean.listaPersonas()}" var="persona" id="dttPersonas" editable="true">  
   
                     <f:facet name="header">  
                         Registro de Personas
@@ -57,10 +57,10 @@ To change this template, choose Tools |
                     <p:ajax event="rowEdit" update=":frm1:msgs" />  
                     <p:ajax event="rowEditCancel" update=":frm1:msgs" />  
 
-                    <p:column headerText="Identificador" style="width:30%">  
+                    <p:column headerText="Id" style="width:30%">  
                         <p:cellEditor>  
                             <f:facet name="output">  
-                                <h:outputText value="#{personaBean.idPersona}" />
+                                <h:outputText value="#{persona.idPersona}" />
                             </f:facet>  
                             <f:facet name="input">  
                                 <p:inputText value="#{personaBean.idPersona}" style="width:100%"/>  
@@ -71,7 +71,7 @@ To change this template, choose Tools |
                     <p:column headerText="Nombre" style="width:20%">  
                         <p:cellEditor>  
                             <f:facet name="output">  
-                                <h:outputText value="#{personaBean.nombrePersona}" />  
+                                <h:outputText value="#{persona.nombrePersona}" />  
                             </f:facet>  
                             <f:facet name="input">  
                                 <p:inputText value="#{personaBean.nombrePersona}" style="width:100%"/>  
@@ -82,7 +82,7 @@ To change this template, choose Tools |
                     <p:column headerText="Primer Apellido" style="width:24%">  
                         <p:cellEditor>  
                             <f:facet name="output">  
-                                <h:outputText value="#{personaBean.primerApellidoPersona}" />  
+                                <h:outputText value="#{persona.primerApellidoPersona}" />  
                             </f:facet>  
                             <f:facet name="input"> 
                                 <p:inputText value="#{personaBean.primerApellidoPersona}" style="width:100%"/>  
@@ -93,7 +93,7 @@ To change this template, choose Tools |
                     <p:column headerText="Segundo Apellido" style="width:30%">  
                         <p:cellEditor>  
                             <f:facet name="output">  
-                                <h:outputText value="#{personaBean.segundoApellidoPersona}" />
+                                <h:outputText value="#{persona.segundoApellidoPersona}" />
                             </f:facet>  
                             <f:facet name="input">  
                                 <p:inputText value="#{personaBean.segundoApellidoPersona}" style="width:100%"/>  
@@ -104,7 +104,7 @@ To change this template, choose Tools |
                     <p:column headerText="Cedula" style="width:20%">  
                         <p:cellEditor>  
                             <f:facet name="output">  
-                                <h:outputText value="#{personaBean.cedulaPersona}" />  
+                                <h:outputText value="#{persona.cedulaPersona}" />  
                             </f:facet>  
                             <f:facet name="input">  
                                 <p:inputText value="#{personaBean.cedulaPersona}" style="width:100%"/>  
@@ -115,7 +115,7 @@ To change this template, choose Tools |
                     <p:column headerText="Direccion" style="width:24%">  
                         <p:cellEditor>  
                             <f:facet name="output">  
-                                <h:outputText value="#{personaBean.direccionPersona}" />  
+                                <h:outputText value="#{persona.direccionPersona}" />  
                             </f:facet>  
                             <f:facet name="input"> 
                                 <p:inputText value="#{personaBean.direccionPersona}" style="width:100%"/>  
@@ -126,7 +126,7 @@ To change this template, choose Tools |
                     <p:column headerText="Telefono" style="width:30%">  
                         <p:cellEditor>  
                             <f:facet name="output">  
-                                <h:outputText value="#{personaBean.telefonoPersona}" />
+                                <h:outputText value="#{persona.telefonoPersona}" />
                             </f:facet>  
                             <f:facet name="input">  
                                 <p:inputText value="#{personaBean.telefonoPersona}" style="width:100%"/>  
@@ -137,7 +137,7 @@ To change this template, choose Tools |
                     <p:column headerText="Celular" style="width:20%">  
                         <p:cellEditor>  
                             <f:facet name="output">  
-                                <h:outputText value="#{personaBean.celularPersona}" />  
+                                <h:outputText value="#{persona.celularPersona}" />  
                             </f:facet>  
                             <f:facet name="input">  
                                 <p:inputText value="#{personaBean.celularPersona}" style="width:100%"/>  
@@ -148,7 +148,7 @@ To change this template, choose Tools |
                     <p:column headerText="Email" style="width:24%">  
                         <p:cellEditor>  
                             <f:facet name="output">  
-                                <h:outputText value="#{personaBean.emailPersona}" />  
+                                <h:outputText value="#{persona.emailPersona}" />  
                             </f:facet>  
                             <f:facet name="input"> 
                                 <p:inputText value="#{personaBean.emailPersona}" style="width:100%"/>  
@@ -156,10 +156,10 @@ To change this template, choose Tools |
                         </p:cellEditor>  
                     </p:column>
 
-                    <p:column headerText="Observaciones" style="width:24%">  
+                    <p:column headerText="Observaciones" style="width:20%">  
                         <p:cellEditor>  
                             <f:facet name="output">  
-                                <h:outputText value="#{personaBean.observaciones}" />  
+                                <h:outputText value="#{persona.observaciones}" />  
                             </f:facet>  
                             <f:facet name="input"> 
                                 <p:inputText value="#{personaBean.observaciones}" style="width:100%"/>  
