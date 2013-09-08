@@ -2,48 +2,134 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Catalogo de Abogados</title>
+    </h:head>    
+    <h:body>
+        <h:form id="frmAbogados">
+            <p:growl id="msgs" showDetail="true"/>
+            <p:panel header="Registrar Datos del Abogado" style="margin-left: 10px;" toggleable="true">
+                <h:panelGrid columns="2">
+                    <label>Identificador:</label>
+                    <p:inputText id="txtID" value="#{abogadosBean.idAbogado}" readonly="true"></p:inputText>
+                    <label>Nombre:</label>
+                    <p:inputText id="txtNombre" value="#{abogadosBean.nombre}"></p:inputText>
+                    <label>Primer Apellido:</label>
+                    <p:inputText id="txtPrimerApellido" value="#{abogadosBean.primerApellido}"></p:inputText>
+                    <label>Segundo Apellido:</label>
+                    <p:inputText id="txtSegundoApellido" value="#{abogadosBean.segundoApellido}"></p:inputText>
+                    <label>Numero de Carnet:</label>
+                    <p:inputText id="txtCarnet" value="#{abogadosBean.noCarne}"></p:inputText>
+                    <label>Cedula:</label>
+                    <p:inputText id="txtCedula" value="#{abogadosBean.cedula}"></p:inputText>
+                    <label>Direccion:</label>
+                    <p:inputText id="txtDireccion" value="#{abogadosBean.direccion}"></p:inputText>
+                    <label>Telefono:</label>
+                    <p:inputText id="txtTelefono" value="#{abogadosBean.telefono}"></p:inputText>
+                    <label>Celular:</label>
+                    <p:inputText id="txtCelular" value="#{abogadosBean.celular}"></p:inputText>
+                    <label>Email:</label>
+                    <p:inputText id="txtEmail" value="#{abogadosBean.email}"></p:inputText>
+                    <label>Tipo de Abogado:</label>
+                    <p:selectOneMenu id="cboTipoAbogado" value="#{abogadosBean.entidadAbogadoTipoabogado.idtipoabogado}" >
+                        <f:selectItem itemLabel="Seleccione el tipo de Abogado" itemValue=""/>
+                        <f:selectItems value="#{tipoAbogadosBean.listaTipoAbogados()}"/>
+                    </p:selectOneMenu>
+                     <label>Activo:</label>
+                     <p:selectBooleanCheckbox value="#{abogadosBean.entidadAbogadoTipoabogado.activo}" />
 
-    
-    <body>
-        <ui:composition template="../Plantillas/Principal.xhtml">
-            <ui:define name="title">Catálogo de Abogados</ui:define>
-            <ui:define name="content">
-                <p:growl id="msgs" showDetail="true"/>
-                <p:panel header="Registrar Datos del Abogado" style="margin-left: 10px;" toggleable="true">
-                    <p:panelGrid columns="2">
-                        <label>Identificador:</label>
-                        <p:inputText id="txtID" value="#{abogadosBean.idAbogado}" readonly="true"></p:inputText>
-                        <label>Nombre:</label>
-                        <p:inputText id="txtNombre" value="#{abogadosBean.nombre}"></p:inputText>
-                        <label>Primer Apellido:</label>
-                        <p:inputText id="txtPrimerApellido" value="#{abogadosBean.primerApellido}"></p:inputText>
-                        <label>Segundo Apellido:</label>
-                        <p:inputText id="txtSegundoApellido" value="#{abogadosBean.segundoApellido}"></p:inputText>
-                        <label>Numero de Carnet:</label>
-                        <p:inputText id="txtCarnet" value="#{abogadosBean.noCarne}"></p:inputText>
-                        <label>Cedula:</label>
-                        <p:inputText id="txtCedula" value="#{abogadosBean.cedula}"></p:inputText>
-                        <label>Direccion:</label>
-                        <p:inputText id="txtDireccion" value="#{abogadosBean.direccion}"></p:inputText>
-                        <label>Telefono:</label>
-                        <p:inputText id="txtTelefono" value="#{abogadosBean.telefono}"></p:inputText>
-                        <label>Celular:</label>
-                        <p:inputText id="txtCelular" value="#{abogadosBean.celular}"></p:inputText>
-                        <label>Email:</label>
-                        <p:inputText id="txtEmail" value="#{abogadosBean.email}"></p:inputText>
-                        <label>Tipo de Abogado:</label>
-                        <p:selectOneMenu id="cboTipoAbogado" value="#{abogadosBean.entidadAbogadoTipoabogado.idtipoabogado}" >
-                            <f:selectItem itemLabel="Seleccione el tipo de Abogado" itemValue=""/>
-                            <f:selectItems value="#{tipoAbogadosBean.listaTipoAbogados()}"/>
-                        </p:selectOneMenu>
-                         <label>Activo:</label>
-                         <p:selectBooleanCheckbox value="#{abogadosBean.entidadAbogadoTipoabogado.activo}" />
-                    </p:panelGrid>
-                    <p:separator/>
-                    <p:commandButton id="btnGuardar" value="Guardar" update="msgs" actionListener="#{abogadosBean.msg()}" oncomplete="limpiarForm()"></p:commandButton>
-                </p:panel>
-            </ui:define>
-        </ui:composition>
-    </body>
+                </h:panelGrid>
+                <p:separator/>
+                <p:commandButton id="btnGuardar" value="Guardar" update="msgs,:tabla" actionListener="#{abogadosBean.msg()}" oncomplete="limpiarForm()" >
+                    
+                </p:commandButton>
+                
+                <p:commandButton id="btnActualizar" value="Actualizar"></p:commandButton>
+                <p:commandButton id="btnEliminar" value="Eliminar"></p:commandButton>
+                <p:commandButton id="btnBuscar" value="Buscar"></p:commandButton>
+            </p:panel>            
+        </h:form>
+        <h:form id="tabla">      
+            <p:dataTable id="dataTable" value="#{abogadosBean.listaAbogados()}" var="abogados">                 
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Id" />                                     
+                    </f:facet>
+                    <h:outputText value="#{abogados.idAbogado}"/>                                 
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Nombre" />
+                    </f:facet>
+                    <h:outputText value="#{abogados.nombre}"/>
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Primer Apellido" />
+                    </f:facet>
+                    <h:outputText value="#{abogados.primerApellido}"/>
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Segundo Apellido" />
+                    </f:facet>
+                    <h:outputText value="#{abogados.segundoApellido}"/>
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Num Carnet" />
+                    </f:facet>
+                    <h:outputText value="#{abogados.noCarne}"/>
+                </p:column>                       
+
+                <p:column>
+                   <f:facet name="header">
+                       <h:outputText value="Cedula" />
+                   </f:facet>
+                   <h:outputText value="#{abogados.cedula}"/>
+                </p:column>
+
+                 <p:column>
+                   <f:facet name="header">
+                       <h:outputText value="Direccion" />
+                   </f:facet>
+                     <h:outputText value="#{abogados.direccion}"/>
+                </p:column> 
+
+                 <p:column>
+                   <f:facet name="header">
+                       <h:outputText value="Telefono" />
+                   </f:facet>
+                     <h:outputText value="#{abogados.telefono}"/>
+                </p:column>
+
+                 <p:column>
+                   <f:facet name="header">
+                       <h:outputText value="Celular" />
+                   </f:facet>
+                     <h:outputText value="#{abogados.celular}"/>
+                </p:column>
+
+                 <p:column>
+                   <f:facet name="header">
+                       <h:outputText value="Email" />
+                   </f:facet>
+                     <h:outputText value="#{abogados.email}"/>
+                </p:column>
+
+             </p:dataTable>
+        <script>
+            function limpiarForm()
+            {
+                document.getElementById("frmAbogados").reset();
+            }
+        </script>
+        </h:form>
+    </h:body>
 </html>

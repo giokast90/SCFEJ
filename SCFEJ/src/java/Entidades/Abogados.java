@@ -4,6 +4,7 @@ package Entidades;
 
 import com.Despachos.Abogados.AbogadosDAO;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Abogados {
 
@@ -19,7 +20,7 @@ public class Abogados {
      private String email;
      private AbogadosDAO dao;
 
-    public Abogados() {
+    public Abogados() throws SQLException {
         dao= new AbogadosDAO();
     }
    
@@ -98,6 +99,11 @@ public class Abogados {
         
         dao.guardarAbogados(entidad);
     }
+    
+    public ArrayList<Abogados> listaAbogados() throws SQLException {
+    
+        return dao.listaAbogados();
+    }    
 }
 
 

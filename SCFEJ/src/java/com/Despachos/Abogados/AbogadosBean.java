@@ -4,12 +4,13 @@
  */
 package com.Despachos.Abogados;
 
+import Entidades.AbogadoTipoabogado;
+import Entidades.Abogados;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import Entidades.Abogados;
-import Entidades.AbogadoTipoabogado;
-import java.sql.SQLException;
-import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
 /**
@@ -34,7 +35,7 @@ public class AbogadosBean {
     private AbogadoTipoabogado entidadAbogadoTipoabogado;
     
     
-    public AbogadosBean() {      
+    public AbogadosBean() throws SQLException {      
         
         entidadAbogadoTipoabogado = new AbogadoTipoabogado();
         entidad = new Abogados();
@@ -165,5 +166,10 @@ public class AbogadosBean {
             FacesContext.getCurrentInstance().addMessage(null, msg);
         }  
     }
+   
+    public ArrayList<Abogados> listaAbogados() throws SQLException {
     
+        return entidad.listaAbogados();
+    }
+
 }
